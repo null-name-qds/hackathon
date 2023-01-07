@@ -11,6 +11,7 @@ export default async function handler(req, res) {
             'X-RapidAPI-Host': process.env.X_RAPIDAPI_HOST,
         },
         params: {
+            'RecordsPerPage': 50,
             'LatitudeMax': 49.267941,
             'LatitudeMin': 49.243,
             'LongitudeMax': -123.02356,
@@ -24,5 +25,5 @@ export default async function handler(req, res) {
         },
     })
 
-    res.status(200).json(data)
+    res.status(200).json(data.Results)
 }

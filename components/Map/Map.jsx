@@ -11,7 +11,7 @@ export default function Map() {
   const redOption = { color: "red" };
   return (
     <>
-      <MapContainer center={[49.2577302,-123.1589232]} zoom={13} scrollWheelZoom={false} className='w-full h-screen'>
+      <MapContainer center={[49.2577302,-123.1589232]} zoom={13} scrollWheelZoom={true} className='w-full h-screen'>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

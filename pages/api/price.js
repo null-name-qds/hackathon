@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export default async function handler(req, res) {
     const query = req.query;
-    const { min, max, bed, bath, size, type } = query;
+    const { min, max, bed, bath, type } = query;
     const { data } = await axios({
         method: 'get',
         url: 'https://realty-in-ca1.p.rapidapi.com/properties/list-residential',
@@ -20,7 +20,6 @@ export default async function handler(req, res) {
             'PriceMax': max,
             'BedRange': bed,
             'BathRange': bath,
-            'BuildingSizeRange': size,
             'BuildingTypeId': type,
         },
     })

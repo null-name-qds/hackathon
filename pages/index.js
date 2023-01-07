@@ -11,7 +11,6 @@ export default function Home({ data }) {
     const [max, setMax] = useState(1000000);
     const [bed, setBed] = useState("0-0");
     const [bath, setBath] = useState("0-0");
-    const [size, setSize] = useState("0-0");
     const [type, setType] = useState(0);
   return (
       <>
@@ -28,7 +27,7 @@ export default function Home({ data }) {
 }
 
 export async function getServerSideProps(ctx) {
-    const { min, max, bed, bath, size, type } = ctx.query;
+    const { min, max, bed, bath, type } = ctx.query;
     let url = "http://localhost:3000/api/price";
     if (process.env.VERCEL_URL) {
         url = `https://${process.env.VERCEL_URL}/api/price`;
@@ -41,7 +40,6 @@ export async function getServerSideProps(ctx) {
             'max': max,
             'bed': bed,
             'bath': bath,
-            'size': size,
             'type': type,
         }
     })

@@ -33,7 +33,7 @@ const Img = styled.img`
 export default function RadioBtn({
   name,
   img,
-  onClick = () => {},
+  onClick,
   bx,
   transform,
 }) {
@@ -44,7 +44,7 @@ export default function RadioBtn({
 
   return (<>
     <Button onClick={() => {
-      onClick
+      onClick()
       setActive(!active)
     }} className={toggle}>
       <Img src={img}/>

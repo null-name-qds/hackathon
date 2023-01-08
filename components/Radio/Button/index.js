@@ -14,13 +14,13 @@ const Button = styled.button`
   border-color: #7E6DE7;
   border-radius: 7.4px;
   box-shadow: 8px 8px 0px #7E6DE7;
-  transition: all 100ms;
+  transition: all 100ms ease-in-out;
     &:active{
-    transform: translate(12px, 12px);
+    transform: translate(8px, 8px);
     box-shadow: 0px 0px 0px #7E6DE7;
   }
   &.active {
-    transform: translate(12px, 12px);
+    transform: translate(8px, 8px);
     box-shadow: 0px 0px 0px #7E6DE7;
   }
 `

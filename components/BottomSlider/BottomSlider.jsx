@@ -53,7 +53,6 @@ export default function BottomSlider() {
                   text="Have a look at Vancouver's current housing market"
                   size="2rem"
                   weight="bold"
-                  color  = '#2e1e8e'
                 />
               </motion.div>
               <motion.div

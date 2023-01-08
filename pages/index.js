@@ -8,8 +8,6 @@ import { motion } from "framer-motion"
 import styled from "styled-components";
 import BottomSlider from '../components/BottomSlider/BottomSlider';
 
-const SideBarCont = styled(motion.Sidebar)`
-`
 
 export default function Home({ data }) {
   const router = useRouter();
@@ -29,7 +27,6 @@ export default function Home({ data }) {
         <link rel="icon" href="/raincheckicon.svg" />
       </Head>
       <div className='flex flex-row justify-between'>
-        {/* {sidebar && <Sidebar onExit={() => { setSideBar(false) }} onSubmit={submitHandler} />} */}
         <Sidebar onSubmit={submitHandler} />
         <Map results={data} />
       </div>

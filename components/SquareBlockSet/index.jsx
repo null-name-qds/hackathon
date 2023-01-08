@@ -2,6 +2,12 @@ import { Spacer } from "../Spacer/Spacer";
 import { SquareBlock } from "../SquareBlock";
 import { Typography } from "../Typography/Typography";
 import { Flex } from "../Flex";
+import { ProgressCircle } from "../ProgressCircle";
+import styled from "styled-components";
+
+const RelativeParent = styled.div`
+  position: relative;
+`;
 
 export function SquareBlockSet() {
   {
@@ -9,32 +15,55 @@ export function SquareBlockSet() {
       <Flex dir="row">
         <SquareBlock>
           <Flex align="flex-end">
-            <Typography weight="700" lineHeight="0" text="$120K" />
-            <Typography weight="600" lineHeight="0" text="PER" />
-            <Typography weight="600" lineHeight="0" text="YEAR" />
+            <Typography 
+              weight="600" 
+              lineHeight="0" 
+              text="$120k" 
+              size="1.35rem"/>
+            <Typography 
+              size="1.35rem" 
+              weight="600" 
+              lineHeight="0" 
+              text="PER" />
+            <Typography 
+              size="1.35rem" 
+              weight="600" 
+              lineHeight="0" 
+              text="YEAR" />
             <Spacer size={10} />
             <Typography
-              size="0.8rem"
+              size=".9rem"
               weight="500"
               lineHeight="0"
               text="INCOME NEEDED"
             />
             <Typography
-              size="0.8rem"
+              size=".9rem"
               weight="500"
               lineHeight="0"
-              text="TO AFFORD"
+              text="TO AFFORD A PLACE"
             />
           </Flex>
         </SquareBlock>
         <Spacer size={25} />
         <SquareBlock padding='0px 10px'>
-          <Flex align="flex-end">
-            <Typography weight="700" lineHeight="0" text="64%" />
-            <Spacer size={10} />
+          <RelativeParent>
             <Typography
-              text="of Vancouverites own"
-              size="1rem"
+                size="1.8rem"
+                weight="600"
+                lineHeight="0"
+                text="64%"
+                color = '#2e1e8e'
+                borderLeft = 'none'
+                style = {{position: 'absolute', top: '43px',left:'-24px'}}
+              />
+          </RelativeParent>
+          <Flex>
+            <ProgressCircle/>
+            <Spacer size={5} />
+            <Typography
+              text="OF VANCOUVERITES OWN HOMES"
+              size="0.6rem"
               weight="400"
               textAlign="right"
             />

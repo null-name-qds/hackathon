@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 import { Typography } from '../../Typography/Typography'
+import { useState } from 'react'
+
 const Button = styled.button`
   display: flex;
   width: 95px;
@@ -17,6 +19,10 @@ const Button = styled.button`
     transform: translate(12px, 12px);
     box-shadow: 0px 0px 0px #7E6DE7;
   }
+  &.active {
+    transform: translate(12px, 12px);
+    box-shadow: 0px 0px 0px #7E6DE7;
+  }
 `
 
 const Img = styled.img`
@@ -31,8 +37,15 @@ export default function RadioBtn({
 }) {
 
 
+  const [active, setActive] = useState(false)
+  const toggle = active ? 'active' : null
+
   return (<>
-    <Button onClick={onClick}>
+    <Button onClick={() => {
+      onClick
+      setActive(!active)
+      console.log(active)
+    }} className={toggle}>
       <Img src={img}/>
       <Typography text={name} borderLeft="none"></Typography>
     </Button>

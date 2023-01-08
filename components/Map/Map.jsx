@@ -1,6 +1,8 @@
 import { MapContainer, TileLayer, useMap } from "react-leaflet";
 import { Marker, Popup } from "react-leaflet";
 import { sanitizePrice, calcYears} from "../../util";
+import { useRouter } from "next/router";
+import { Link } from "next/link";
 import "leaflet/dist/leaflet.css";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css"; // Re-uses images from ~leaflet package
 import "leaflet-defaulticon-compatibility";
@@ -11,7 +13,7 @@ import { Typography } from "../Typography/Typography";
 import { Spacer } from "../Spacer/Spacer";
 import { motion } from 'framer-motion'
 
-export default function Map({ results, salary = 40000 }) {
+export default function Map({ results }) {
 const NewPop = styled(Popup)`
   border-radius: 0;
 
@@ -49,7 +51,9 @@ const NewPop = styled(Popup)`
   }
   
 `
-
+    const router = useRouter();
+    const query = router.query;
+    const salary = query.salary;
     const tombstoneStyle = {
         display: "flex",
         flexDirection: "row",
@@ -114,7 +118,7 @@ const NewPop = styled(Popup)`
                     color="black"
                   />
                   <Typography
-                    text={`$${salary}/year`}
+                    text={`$${salary ?? 40000}/year`}
                     textAlign="right"
                   />
                   <Spacer size='20' />
@@ -125,8 +129,8 @@ const NewPop = styled(Popup)`
                     size="1.5rem"
                     color="black"
                   />
-                      {(calcYears(sanitizePrice(result.Property.Price), salary) <= 100 ? (<Typography
-                          text={`${calcYears(sanitizePrice(result.Property.Price), salary)} YEARS`}
+                      {(calcYears(sanitizePrice(result.Property.Price), salary ?? 40000) <= 80 ? (<Typography
+                          text={`${calcYears(sanitizePrice(result.Property.Price), salary ?? 40000)} YEARS`}
                           textAlign="right"
                           weight="600"
                           size="1.5rem"

@@ -3,6 +3,7 @@ import { Typography } from '../Typography/Typography';
 import { Spacer } from '../Spacer/Spacer';
 import { useRouter } from 'next/router';
 import { TypeAnimation } from 'react-type-animation';
+import DarkButton from '../DarkButton'
 
 const Background = styled.div`
 display: flex;
@@ -29,14 +30,17 @@ display: flex;
 flex-display: row;`
 
 const LandingCTA = styled.button`
-background-color: #7E6DE7;
-height: 60px;
-width: 260px;
-border-radius:10px;
-display: flex;
-justify-content: center;
-align-items: center;
-z-index: 100;
+    background-color: #7E6DE7;
+    padding: 1em 2em;
+    border-radius:10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    transition: 0.3s ease-in-out all;
+    &hover:{
+        background-color: #6659ba;
+    }
 `
 
 const VancouverSpecialHouseOverlay = styled.img`
@@ -67,7 +71,7 @@ export default function LandingPage() {
                 <Spacer axis='vertical' size={50} />
                 <div>
                     <span className="text-[#333] font-bold">VANCOUVER IS </span>
-                    <TypeAnimation sequence={['expensive.', 1000, 'unaffordable.', 2000, 'a mess.', 1000]} wrapper="div" repeat={Infinity} className="text-[#7E6DE7] font-bold text-2xl" />
+                    <TypeAnimation sequence={['expensive.', 1000, 'unaffordable.', 2000, 'a RainCheck.', 1000]} wrapper="div" repeat={Infinity} className="text-[#7E6DE7] font-bold text-2xl" />
                 </div>
                 <Spacer axis='vertical' size={50} />
 

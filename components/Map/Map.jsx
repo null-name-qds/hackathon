@@ -69,9 +69,8 @@ const NewPop = styled(Popup)`
     <>
       <MapContainer center={[49.2577302,-123.1589232]} zoom={13} scrollWheelZoom={true} className='w-full h-screen'>
         <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
+          attribution='Map data &copy; <a href=&quot;https://www.openstreetmap.org/&quot;>OpenStreetMap</a> contributors, <a href=&quot;https://creativecommons.org/licenses/by-sa/2.0/&quot;>CC-BY-SA</a>, Imagery &copy; <a href=&quot;https://www.mapbox.com/&quot;>Mapbox</a>'
+          url={`https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibWNhZmlrIiwiYSI6ImNsY25qdnIycjAwbWczc280d3BvanJxNGkifQ.vOyv9_zxKXD4jNcdu6qfgQ`}        />
           {results && results.length !== 0  ? results.map((result) => (
               <Marker
                   key={result.Id}
@@ -146,7 +145,7 @@ const NewPop = styled(Popup)`
                   />
                   <Spacer size='20' />
                   <Typography 
-                    text="You've selected:"
+                    text="You've selected"
                     textAlign="right"
                     color="black"
                     weight="600"
@@ -164,7 +163,7 @@ const NewPop = styled(Popup)`
                   />
                   <Spacer size='20' />
                   <Typography
-                    text="Based on your income:"
+                    text="Based on your income"
                     textAlign="right"
                     weight="600"
                     color="black"
@@ -178,7 +177,7 @@ const NewPop = styled(Popup)`
                     text="It would take you"
                     textAlign="right"
                     weight="600"
-                    size="1.5rem"
+                    size="1.45rem"
                     color="black"
                   />
                   <Typography

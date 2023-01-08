@@ -46,7 +46,6 @@ export default function RadioBtn({
     <Button onClick={() => {
       onClick
       setActive(!active)
-      console.log(active)
     }} className={toggle}>
       <Img src={img}/>
       <Typography text={name} borderLeft="none"></Typography>

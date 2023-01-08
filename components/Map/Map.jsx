@@ -8,8 +8,6 @@ import "leaflet-defaulticon-compatibility";
 import {BsHouseFill} from "react-icons/bs";
 
 export default function Map({ results }) {
-  const purpleOption = { color: "purple" };
-  const redOption = { color: "red" };
   const houseIcon = L.icon({
       iconUrl: "/marker.svg",
       iconSize: [50, 50],

@@ -22,3 +22,16 @@
        font-family: Quicksand-SemiBold;
        src: url(../fonts/Quicksand-SemiBold.ttf);
 }
+
+.leaflet-top, .leaflet-bottom {
+       z-index: 500 !important;
+}
+
+.rise-up{
+       transition: 0.2s ease-in-out all !important;
+}
+
+.rise-up:hover{
+       transform: translateY(-3px);
+       box-shadow: 0 5px 10px rgba(0,0,0,0.12);
+}

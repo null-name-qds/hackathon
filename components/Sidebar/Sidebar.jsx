@@ -1,7 +1,4 @@
-import Image from "next/image";
-import Chart from "../Chart/Chart";
 import Button from '../Button';
-import InfoGraph from '../Infograph';
 import SelectInput from '../SelectInput'
 import styled from "styled-components";
 import Input from '../Input';
@@ -27,6 +24,7 @@ export default function Sidebar() {
         <>
             <div className='h-screen bg-[#F3F3FE] px-5 py-2 flex flex-col gap-8'>
                 {/* <div className="flex"> */}
+                {/* <Button btnText={"Filters"}/> */}
                 <Spacer axis={"horizontal"} size={30} />
                 <Typography text="Filter housing" weight="semibold" size="1.5rem" />
 

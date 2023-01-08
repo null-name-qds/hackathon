@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-
+import { Typography } from '../../Typography/Typography'
 const Button = styled.button`
   display: flex;
   width: 95px;
@@ -34,7 +34,7 @@ export default function RadioBtn({
   return (<>
     <Button onClick={onClick}>
       <Img src={img}/>
-      <p>{name}</p>
+      <Typography text={name} borderLeft="none"></Typography>
     </Button>
   </>
   )

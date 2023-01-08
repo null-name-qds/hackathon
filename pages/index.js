@@ -23,7 +23,7 @@ export default function Home({ data }) {
       <div className='flex flex-row justify-between'>
         <Sidebar />
         <Map results={data} />
-        <Button btnText="See Overview"/>
+        <Button btnText="See Overview" position={"fixed"} top={"10%"} right={"10%"} />
       </div>
     </>
   )

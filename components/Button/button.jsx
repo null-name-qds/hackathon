@@ -2,13 +2,14 @@ import styled from "styled-components";
 import { Typography } from "../Typography/Typography";
 const ButtonDiv = styled.button`
 padding:1rem 5rem;
-position:fixed;
 border: 2px #7E6DE7 solid;
 z-index:400;
 background-color:#FFFFFF;
-top:10%;
-right:10%;
+position:${props => props.position || "relative"};
+top:${props => props.top || ""};
+right:${props => props.right || ""};
 border-radius:1rem;
+width:${props => props.width || "auto"}
 display:flex;
 justify-content:justify-content;
 align-items:center;
@@ -26,11 +27,15 @@ export default function Button({
     btnText,
     onClick = () => { },
     bx,
+    position,
+    right,
+    top,
+    width,
 }
 ) {
     return (
-        <ButtonDiv onClick={onClick} bx={bx}>
-            <Typography text={btnText} weight={"bold"} borderLeft={"none"} />
+        <ButtonDiv onClick={onClick} bx={bx} position={position} right={right} top={top} width={width}>
+            <Typography text={btnText} weight={"bold"} borderLeft={"none"} textAlign={"center"}/>
         </ButtonDiv>
     )
 }

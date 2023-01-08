@@ -90,12 +90,12 @@ export const typeOfHouseData = {
 export default function Chart() {
   return (
     <>
-      <div className="flex flex-col gap-10">
+      <div className="flex flex-row gap-10 max-w-[470px]">
         <Line
           options={options}
           data={data}
           redraw={true}
-          className="h-auto w-[470px]"
+          className="h-auto max-w-[470px]"
         />
         <Bar options={houseTypeOptions} data={typeOfHouseData} redraw={true} />
       </div>

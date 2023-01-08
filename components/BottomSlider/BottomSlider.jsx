@@ -7,7 +7,7 @@ export default function BottomSlider() {
     <>
       <div className="w-full bg-[#F3F3FE] py-4 fixed z-[999] bottom-[-150px] min-h-[200px]">
         <MdOutlineArrowUpward className="mx-auto" />
-        <div className="max-w-[200px]">
+        <div className="">
             <Chart />
         </div>
       </div>

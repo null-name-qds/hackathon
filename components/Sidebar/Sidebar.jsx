@@ -14,11 +14,12 @@ display:flex;
 align-items:center;
 `
 
-export default function Sidebar() {
+export default function Sidebar({ onSubmit }) {
     const [min, setMin] = useState(0);
-    const [max, setMax] = useState(100000);
-    const [bedrooms, setBedrooms] = useState(1);
-    const [bathrooms, setBathrooms] = useState(1);
+    const [max, setMax] = useState(1000000);
+    const [bed, setBed] = useState("0-0");
+    const [bath, setBath] = useState("0-0");
+    const [type, setType] = useState(0);
 
     return (
         <>
@@ -31,11 +32,11 @@ export default function Sidebar() {
                 <div className="flex gap-40">
                     <div className="flex flex-col">
                         <label><Typography text='bedrooms' /></label>
-                        <SelectInput values={[1, 2, 3]} onChange={(e) => { setBedrooms(e.target.value) }} />
+                        <SelectInput values={["1", "2", "3"]} onChange={(e) => { setBed(`${e.target.value}-0`) }} />
                     </div>
                     <div className="flex flex-col">
                         <label><Typography text='bathrooms' /></label>
-                        <SelectInput values={[1, 2, 3]} onChange={(e) => { setBathrooms(e.target.value) }} />
+                        <SelectInput values={["1", "2", "3"]} onChange={(e) => { setBath(`${e.target.value}-0`) }} />
                     </div>
                 </div>
 
@@ -53,10 +54,10 @@ export default function Sidebar() {
                 <div>
                     <label><Typography text='building type' color="#7E6DE7" /></label>
                     <div className="flex gap-5">
-                        <Radio name="house" img="/house.svg" />
-                        <Radio name="condo" img="/apartment.svg" />
-                        <Radio name="townhouse" img="/townhouse.svg" />
-                        <Radio name="duplex" img="/duplex.svg" />
+                        <Radio name="house" img="/house.svg" onClick={() => setType(1)} />
+                        <Radio name="condo" img="/apartment.svg" onClick={() => setType(17)}/>
+                        <Radio name="townhouse" img="/townhouse.svg" onClick={() => setType(16)} />
+                        <Radio name="duplex" img="/duplex.svg" onClick={() => setType(2)} />
                     </div>
                 </div>
 
@@ -64,7 +65,7 @@ export default function Sidebar() {
                     <Typography text='Want to know how long it will take to afford each property? Enter your salary to see!' color="#7E6DE7" />
                     <BigInput />
                     <Spacer axis='vertical' size={0} />
-                    <DarkButton btnText="Filter" onClick={(e)=> {console.log('x')}}/>
+                    <DarkButton btnText="Filter" onClick={() => onSubmit(min, max, bed, bath, type)}/>
                 </div>
 
             </div>

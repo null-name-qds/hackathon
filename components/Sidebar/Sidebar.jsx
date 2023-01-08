@@ -31,7 +31,7 @@ export default function Sidebar({
     return (
         <>
             <AnimatePresence>
-                {sidebar && <motion.div className='max-h-screen bg-[#F3F3FE] max-w-prose px-6 py-6 flex flex-col gap-8 fixed z-[501] mt-5 ml-5 justify-around rounded-lg'
+                {sidebar && <motion.div className='max-h-screen bg-[#F3F3FE] max-w-prose px-6 py-6 flex flex-col gap-8 fixed z-[501] mt-5 ml-5 justify-around rounded-xl'
                     initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ ease: "easeInOut", duration: .4 }}>
                     <div className="flex justify-between">
                         <Spacer axis={"horizontal"} size={1} />
@@ -40,7 +40,7 @@ export default function Sidebar({
                             width={29}
                             height={29}
                             alt={"exit icon"}
-                            className="cursor-pointer mt-1"
+                            className="cursor-pointer mt-1 rise-up"
                             onClick={() => { setSideBar(false); setToggle(true); }}
                         />
                     </div>

@@ -12,12 +12,6 @@ const SideBarCont = styled(motion.Sidebar)`
 `
 
 export default function Home({ data }) {
-  const [min, setMin] = useState(0);
-  const [max, setMax] = useState(1000000);
-  const [bed, setBed] = useState("0-0");
-  const [bath, setBath] = useState("0-0");
-  const [type, setType] = useState(0);
-
   const router = useRouter();
   const submitHandler = async (min, max, bed, bath, type) => {
     await router.push({

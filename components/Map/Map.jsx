@@ -2,7 +2,7 @@ import { MapContainer, TileLayer, useMap } from "react-leaflet";
 import { Marker, Popup } from "react-leaflet";
 import { sanitizePrice, calcYears} from "../../util";
 import { useRouter } from "next/router";
-import { Link } from "next/link";
+import Link from "next/link";
 import "leaflet/dist/leaflet.css";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css"; // Re-uses images from ~leaflet package
 import "leaflet-defaulticon-compatibility";
@@ -122,6 +122,8 @@ const NewPop = styled(Popup)`
                     textAlign="right"
                   />
                   <Spacer size='20' />
+                      <Link href={`https://realtor.ca${result.RelativeURLEn}`} target="_blank"> <Typography text={"View Listing"} textAlign="right" /> </Link>
+                      <Spacer size='20' />
                   <Typography
                     text="It would take you"
                     textAlign="right"

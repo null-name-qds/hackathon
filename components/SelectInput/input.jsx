@@ -15,9 +15,7 @@ export default function Input({
     onChange=()=>{},
 }
 ) {
-    console.log(values)
-    return (
-        
+    return (     
         <InputDiv onChange={onChange}>
             {values.map((value) => {
                return <option value={value} key={value}>{value}</option>

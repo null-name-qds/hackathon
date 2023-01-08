@@ -7,14 +7,15 @@ background-color:#FFFFFF;
 border-radius:1rem;
 display:flex;
 flex-direction:row;
-justify-content:space-evenly;
-box-shadow: 8px 6px 0px #7E6DE7,
-8px 6px 0px 1px #7CA1FF;
+justify-content:space-between;
+box-shadow: 8px 8px 0px #7E6DE7,
+8px 8px 0px 1px #7CA1FF;
 max-height:90px;
 min-width:290px;
 max-width:320px;
-gap:25px;
+gap:20px;
 `
+
 const InfoText = styled.div`
 display:flex;
 flex-direction:column;

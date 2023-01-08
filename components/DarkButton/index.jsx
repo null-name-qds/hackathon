@@ -19,7 +19,7 @@ export default function DarkButton({
 }
 ) {
     return (
-        <ButtonDiv onClick={onClick}>
+        <ButtonDiv onClick={onClick} className={"rise-up"}>
             <Typography text={btnText} weight={"700"} borderLeft={"none"} color={"white"}/>
         </ButtonDiv>
     )

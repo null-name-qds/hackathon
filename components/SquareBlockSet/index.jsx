@@ -18,7 +18,7 @@ export function SquareBlockSet() {
             <Typography 
               weight="600" 
               lineHeight="0" 
-              text="$120k" 
+              text="$434k" 
               size="1.35rem"/>
             <Typography 
               size="1.35rem" 

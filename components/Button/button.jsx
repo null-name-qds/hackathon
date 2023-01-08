@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { Typography } from "../Typography/Typography";
 import { Spacer } from "../Spacer/Spacer";
+import { useState } from "react";
+import Image from "next/image";
 
 const ButtonDiv = styled.button`
 padding:${props => props.padding || "1rem 5rem"};
@@ -38,10 +40,21 @@ export default function Button({
     transform,
 }
 ) {
+    // const [active, setActive] = useState(false)
+    // const toggle = active ? 'active' : null
     return (
-        <ButtonDiv onClick={onClick} bx={bx} position={position} left={left} top={top} width={width} display={display} padding={padding} zIndex={zIndex} transform={transform}>
+        <ButtonDiv onClick={() => { onClick() }} bx={bx} position={position} left={left} top={top} width={width} display={display} padding={padding} zIndex={zIndex} transform={transform} 
+        // className={toggle}
+        >
             <Typography text={btnText} weight={"bold"} size={"1.3rem"} borderLeft={"none"} textAlign={"center"} />
-            {icon && <><Spacer axis={"horizontal"} size={15} /><img src={icon} /></>}
+            {icon && <><Spacer axis={"horizontal"} size={15} /><Image
+                src={icon}
+                width={28}
+                height={21}
+                alt={icon}
+            /></>
+            }
+
         </ButtonDiv>
     )
 }

@@ -61,11 +61,7 @@ const NewPop = styled(Popup)`
         marginTop: "1em",
     }
 
-  const houseIcon = L.icon({
-      iconUrl: "/marker.svg",
-      iconSize: [50, 50],
-  })
-    const expensiveHouse = L.icon({
+    const houseIcon = L.icon({
         iconUrl: "/dollarMarker.svg",
         iconSize: [50, 50],
     })
@@ -78,7 +74,7 @@ const NewPop = styled(Popup)`
           {results && results.length !== 0  ? results.map((result) => (
               <Marker
                   key={result.Id}
-                  icon={sanitizePrice(result.Property.Price) >= 600000 ? expensiveHouse : houseIcon}
+                  icon={houseIcon}
                   position={[result.Property.Address.Latitude, result.Property.Address.Longitude]}
                   eventHandlers={{
                     click: () => {

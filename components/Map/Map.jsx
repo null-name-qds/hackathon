@@ -5,12 +5,13 @@ import style from "../../styles/Home.module.css";
 import "leaflet/dist/leaflet.css";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css"; // Re-uses images from ~leaflet package
 import "leaflet-defaulticon-compatibility";
-import {BsHouseFill} from "react-icons/bs";
+import { BsHouseFill } from "react-icons/bs";
 import styled from 'styled-components'
 import { Typography } from "../Typography/Typography";
 import { Spacer } from "../Spacer/Spacer";
-import {motion} from 'framer-motion'
+import { motion } from 'framer-motion'
 
+export default function Map({ results }) {
 const NewPop = styled(Popup)`
   border-radius: 0;
 
@@ -47,10 +48,6 @@ const NewPop = styled(Popup)`
     margin:0;
   }
 `
-
-export default function Map({ 
-  results
-}) {
   const purpleOption = { color: "purple" };
   const redOption = { color: "red" };
   const houseIcon = L.icon({

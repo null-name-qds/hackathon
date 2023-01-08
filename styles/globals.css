@@ -3,6 +3,40 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+       font-family: Quicksand-Bold;
+       src: url(../fonts/Quicksand-Bold.ttf);
+}
+@font-face {
+       font-family: Quicksand-Light;
+       src: url(../fonts/Quicksand-Light.ttf);
+}
+@font-face {
+       font-family: Quicksand-Medium;
+       src: url(../fonts/Quicksand-Medium.ttf);
+}
+@font-face {
+       font-family: Quicksand-Regular;
+       src: url(../fonts/Quicksand-Regular.ttf);
+}
+@font-face {
+       font-family: Quicksand-SemiBold;
+       src: url(../fonts/Quicksand-SemiBold.ttf);
+}
+
+.leaflet-top, .leaflet-bottom {
+       z-index: 500 !important;
+}
+
+.rise-up{
+       transition: 0.2s ease-in-out all !important;
+}
+
+.rise-up:hover{
+       transform: translateY(-3px);
+       box-shadow: 0 5px 10px rgba(0,0,0,0.12);
+}
+
 body, html {
        font-family: 'Quicksand', sans-serif;
 };

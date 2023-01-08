@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react'
 import styles from '../styles/Home.module.css'
 import { Spacer } from '../components/Spacer/Spacer'
 import Button from '../components/Button';
+import BottomSlider from '../components/BottomSlider/BottomSlider';
 
 export default function Home({ data }) {
     const router = useRouter();
@@ -27,6 +28,7 @@ export default function Home({ data }) {
         <Map results={data} />
         <Button btnText="See Overview" position={"fixed"} top={"10%"} right={"10%"} />
       </div>
+      <BottomSlider />
     </>
   )
 }

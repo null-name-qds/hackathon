@@ -35,27 +35,27 @@ export default function Home({ data }) {
   )
 }
 
-export async function getServerSideProps(ctx) {
-    const { min, max, bed, bath, type, salary } = ctx.query;
-    let url = "http://localhost:3000/api/price";
-    if (process.env.VERCEL_URL) {
-        url = `https://${process.env.VERCEL_URL}/api/price`;
-    }
-    const { data } = await axios({
-        method: 'get',
-        url: url,
-        params: {
-            'min': min,
-            'max': max,
-            'bed': bed,
-            'bath': bath,
-            'type': type,
-            'salary': salary,
-        }
-    })
-    return {
-        props: {
-            data: data
-        }
-  }
-}
+// export async function getServerSideProps(ctx) {
+//     const { min, max, bed, bath, type, salary } = ctx.query;
+//     let url = "http://localhost:3000/api/price";
+//     if (process.env.VERCEL_URL) {
+//         url = `https://${process.env.VERCEL_URL}/api/price`;
+//     }
+//     const { data } = await axios({
+//         method: 'get',
+//         url: url,
+//         params: {
+//             'min': min,
+//             'max': max,
+//             'bed': bed,
+//             'bath': bath,
+//             'type': type,
+//             'salary': salary,
+//         }
+//     })
+//     return {
+//         props: {
+//             data: data
+//         }
+//   }
+// }

@@ -9,6 +9,7 @@ import { Spacer } from '../components/Spacer/Spacer'
 import Button from '../components/Button/button';
 import { motion } from "framer-motion"
 import styled from "styled-components";
+import BottomSlider from '../components/BottomSlider/BottomSlider';
 
 const SideBarCont = styled(motion.Sidebar)`
 `
@@ -39,6 +40,7 @@ export default function Home({ data }) {
         <Map results={data} />
 
       </div>
+      <BottomSlider />
     </>
   )
 }

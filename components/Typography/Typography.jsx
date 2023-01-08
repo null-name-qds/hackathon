@@ -21,11 +21,12 @@ export function Typography({
     textAlign = 'left',
     display = 'block',
     margin = '0',
-    lineHeight = 'inherit',
+    lineHeight = '0',
     overflow = 'visible',
     padding = '0',
     width = 'auto',
     borderLeft = 'inherit',
+    position = 'inherit',
     ...otherProps
 }) {
     return (

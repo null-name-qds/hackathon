@@ -1,7 +1,6 @@
 import { MapContainer, TileLayer, useMap } from "react-leaflet";
 import { Marker, Popup } from "react-leaflet";
-import { sanitizePrice} from "../../util";
-import style from "../../styles/Home.module.css";
+import { sanitizePrice, calcYears} from "../../util";
 import "leaflet/dist/leaflet.css";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css"; // Re-uses images from ~leaflet package
 import "leaflet-defaulticon-compatibility";
@@ -11,7 +10,7 @@ import { Typography } from "../Typography/Typography";
 import { Spacer } from "../Spacer/Spacer";
 import { motion } from 'framer-motion'
 
-export default function Map({ results }) {
+export default function Map({ results, salary = 40000 }) {
 const NewPop = styled(Popup)`
   border-radius: 0;
 
@@ -48,8 +47,6 @@ const NewPop = styled(Popup)`
     margin:0;
   }
 `
-  const purpleOption = { color: "purple" };
-  const redOption = { color: "red" };
   const houseIcon = L.icon({
       iconUrl: "/marker.svg",
       iconSize: [50, 50],
@@ -108,7 +105,7 @@ const NewPop = styled(Popup)`
                     color="black"
                   />
                   <Typography
-                    text="$4,214/month"
+                    text={`$${salary}/year`}
                     textAlign="right"
                   />
                   <Spacer size='20' />
@@ -120,7 +117,7 @@ const NewPop = styled(Popup)`
                     color="black"
                   />
                   <Typography
-                    text="75 YEARS"
+                    text={`${calcYears(sanitizePrice(result.Property.Price), salary)} YEARS`}
                     textAlign="right"
                     weight="600"
                     size="1.5rem"

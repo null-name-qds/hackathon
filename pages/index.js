@@ -4,9 +4,6 @@ import { useRouter } from 'next/router'
 import axios from 'axios';
 import Sidebar from '../components/Sidebar/Sidebar'
 import { useState, useEffect } from 'react'
-import styles from '../styles/Home.module.css'
-import { Spacer } from '../components/Spacer/Spacer'
-import Button from '../components/Button/button';
 import { motion } from "framer-motion"
 import styled from "styled-components";
 import BottomSlider from '../components/BottomSlider/BottomSlider';
@@ -45,26 +42,26 @@ export default function Home({ data }) {
   )
 }
 
-// export async function getServerSideProps(ctx) {
-//     const { min, max, bed, bath, type } = ctx.query;
-//     let url = "http://localhost:3000/api/price";
-//     if (process.env.VERCEL_URL) {
-//         url = `https://${process.env.VERCEL_URL}/api/price`;
-//     }
-//     const { data }= await axios({
-//         method: 'get',
-//         url: url,
-//         params: {
-//             'min': min,
-//             'max': max,
-//             'bed': bed,
-//             'bath': bath,
-//             'type': type,
-//         }
-//     })
-//     return {
-//         props: {
-//             data: data
-//         }
-//     }
-// }
+export async function getServerSideProps(ctx) {
+    const { min, max, bed, bath, type } = ctx.query;
+    let url = "http://localhost:3000/api/price";
+    if (process.env.VERCEL_URL) {
+        url = `https://${process.env.VERCEL_URL}/api/price`;
+    }
+    const { data }= await axios({
+        method: 'get',
+        url: url,
+        params: {
+            'min': min,
+            'max': max,
+            'bed': bed,
+            'bath': bath,
+            'type': type,
+        }
+    })
+    return {
+        props: {
+            data: data
+        }
+    }
+}

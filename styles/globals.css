@@ -3,27 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-       font-family: Quicksand-Bold;
-       src: url(../fonts/Quicksand-Bold.ttf);
-}
-@font-face {
-       font-family: Quicksand-Light;
-       src: url(../fonts/Quicksand-Light.ttf);
-}
-@font-face {
-       font-family: Quicksand-Medium;
-       src: url(../fonts/Quicksand-Medium.ttf);
-}
-@font-face {
-       font-family: Quicksand-Regular;
-       src: url(../fonts/Quicksand-Regular.ttf);
-}
-@font-face {
-       font-family: Quicksand-SemiBold;
-       src: url(../fonts/Quicksand-SemiBold.ttf);
-}
-
 .leaflet-top, .leaflet-bottom {
        z-index: 500 !important;
 }
@@ -39,4 +18,4 @@
 
 body, html {
        font-family: 'Quicksand', sans-serif;
-};
+}

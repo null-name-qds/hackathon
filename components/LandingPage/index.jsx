@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import { Typography } from '../Typography/Typography';
 import { Spacer } from '../Spacer/Spacer';
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
+import { TypeAnimation } from 'react-type-animation';
 
 const Background = styled.div`
 display: flex;
@@ -64,7 +65,10 @@ export default function LandingPage() {
                         padding="10px" />
                 </TitleFlex>
                 <Spacer axis='vertical' size={50} />
-                <div>VANCOUVER IS.... lgjealkgmkealmg ishan pls</div>
+                <div>
+                    <span className="text-[#333] font-bold">VANCOUVER IS </span>
+                    <TypeAnimation sequence={['expensive.', 1000, 'unaffordable.', 2000, 'a mess.', 1000]} wrapper="div" repeat={Infinity} className="text-[#7E6DE7] font-bold text-2xl" />
+                </div>
                 <Spacer axis='vertical' size={50} />
 
                 <Typography

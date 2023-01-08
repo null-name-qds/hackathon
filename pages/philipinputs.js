@@ -6,11 +6,11 @@ import Sidebar from '../components/Sidebar/Sidebar'
 import { useState, useEffect } from 'react'
 import styles from '../styles/Home.module.css'
 import { Spacer } from '../components/Spacer/Spacer'
-import Button from '../components/Button';
-import InfoGraph from '../components/Infograph';
-import SelectInput from '../components/SelectInput'
+import Button from '../components/Button/button';
+import InfoGraph from '../components/Infograph/Infograph';
+import SelectInput from '../components/SelectInput/input'
 import styled from "styled-components";
-import Input from '../components/Input';
+import Input from '../components/Input/Input';
 import { Typography } from '../components/Typography/Typography';
 import DarkButton from '../components/DarkButton';
 
@@ -39,8 +39,8 @@ export default function Home({ data }) {
             </div>
             <Button header={"See Map"} onClick={() => { }} />
             <InfoGraphDivs>
-                <InfoGraph header={"$1.5 MILLION"} subhead={"AVERAGE HOME COST"} icon={"/icons/bi_house-fill.svg"} />
-                <InfoGraph header={"$2.2K/MONTH"} subhead={"AVERAGE RENT COST"} icon={"/icons/ic_round-apartment.svg"} />
+                <InfoGraph header={"$1.5 MILLION"} subhead={"AVERAGE HOME COST"} icon={"/house.svg"} />
+                <InfoGraph header={"$2.2K/MONTH"} subhead={"AVERAGE RENT COST"} icon={"/apartment.svg"} />
                 <label><Typography text='bedrooms' /></label>
                 <SelectInput values={[1, 2, 3]} onChange={(e) => { setBedrooms(1) }} />
             </InfoGraphDivs>

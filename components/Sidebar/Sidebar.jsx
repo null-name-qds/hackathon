@@ -39,17 +39,17 @@ export default function Sidebar({
                     </div>
                     <div className="flex gap-40">
                         <div className="flex flex-col">
-                            <label><Typography text='bedrooms' /></label>
+                            <label><Typography text='Bedrooms' /></label>
                             <SelectInput values={["1", "2", "3"]} onChange={(e) => { setBed(`${e.target.value}-0`) }} />
                         </div>
                         <div className="flex flex-col">
-                            <label><Typography text='bathrooms' /></label>
+                            <label><Typography text='Bathrooms' /></label>
                             <SelectInput values={["1", "2", "3"]} onChange={(e) => { setBath(`${e.target.value}-0`) }} />
                         </div>
                     </div>
 
                     <div>
-                        <label><Typography text='cost range' color="#7E6DE7" /></label>
+                        <label><Typography text='Cost Range' color="#7E6DE7" /></label>
                         <CostDiv>
                             <Input value={min} type={"number"} onChange={(e) => { setMin(e.target.value) }} />
                             <Spacer axis='horizontal' size={30} />
@@ -60,7 +60,7 @@ export default function Sidebar({
                     </div>
 
                     <div>
-                        <label><Typography text='building type' color="#7E6DE7" /></label>
+                        <label><Typography text='Building Type' color="#7E6DE7" /></label>
                         <div className="flex gap-5">
                             <Radio name="house" img="/house.svg" bx={type === 1} transform={type === 1} onClick={() => setType(1)} />
                             <Radio name="condo" img="/apartment.svg" onClick={() => setType(17)} />

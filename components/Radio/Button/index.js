@@ -11,12 +11,10 @@ const Button = styled.button`
   border: 1px solid;
   border-color: #7E6DE7;
   border-radius: 7.4px;
-  box-shadow: 8px 8px 0px #7E6DE7;
-  transition: all 100ms;
-    &:active{
-    transform: translate(12px, 12px);
-    box-shadow: 0px 0px 0px #7E6DE7;
-  }
+  outline:none;
+  transition: all 100ms ease-in-out;
+  box-shadow: ${props => props.bx ? "0px": "8px 8px 0px #7E6DE7"};
+  transform: ${props=> props.transform ? "translate(8px, 8px)" : undefined};
 `
 
 const Img = styled.img`
@@ -27,12 +25,14 @@ const Img = styled.img`
 export default function RadioBtn({
   name,
   img,
-  onClick = () => {}
+  onClick = () => {},
+  bx,
+  transform,
 }) {
 
 
   return (<>
-    <Button onClick={onClick}>
+    <Button onClick={onClick} bx={bx} transform={transform}>
       <Img src={img}/>
       <Typography text={name} borderLeft="none"></Typography>
     </Button>

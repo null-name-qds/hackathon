@@ -58,7 +58,7 @@ export const data = {
   datasets: [
     {
       label: "Average Housing Prices in Vancouver",
-      data: labels.map(() => faker.datatype.number({ min: -0, max: 100 })),
+      data: labels.map(() => faker.datatype.number({ min: 1500000, max: 2500000 })),
       borderColor: "#7E6DE7",
       backgroundColor: "#AEB9FF",
     },
@@ -71,17 +71,17 @@ export const typeOfHouseData = {
   datasets: [
     {
       label: "House",
-      data: labels.map(() => faker.datatype.number({ min: -0, max: 100 })),
+      data: labels.map(() => faker.datatype.number({ min: 20000, max: 25000 })),
       backgroundColor: "#AEB9FF",
     },
     {
       label: "Condo",
-      data: labels.map(() => faker.datatype.number({ min: -0, max: 100 })),
+      data: labels.map(() => faker.datatype.number({ min: 20000, max: 25000 })),
       backgroundColor: "#7E6DE7",
     },
     {
       label: "Duplex",
-      data: labels.map(() => faker.datatype.number({ min: -0, max: 100 })),
+      data: labels.map(() => faker.datatype.number({ min: 20000, max: 25000 })),
       backgroundColor: "#D7DCFF",
     },
   ],

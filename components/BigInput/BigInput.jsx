@@ -18,12 +18,11 @@ box-shadow: 8px 8px 0px #7E6DE7;
   }
 `
 export default function BigInput({
-    onChange = () => { },
+    onChange,
     value,
-    type,
 }
 ) {
     return (
-        <InputDiv onChange={onChange} type={type} value={value} min="1" placeholder="$$$$$" />
+        <InputDiv onChange={onChange} type="text" value={value} min="1" placeholder="$$$$$" />
     )
 }

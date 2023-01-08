@@ -11,12 +11,11 @@ color: #7E6DE7;
     }
 `
 export default function Input({
-    onChange=()=>{},
+    onChange,
     value,
-    type,
 }
 ) {
     return (
-        <InputDiv onChange={onChange} type={type} value={value} min="1"/>
+        <InputDiv onChange={onChange} type="text" value={value} min="1"/>
     )
 }

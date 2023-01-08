@@ -2,8 +2,8 @@ import styled from 'styled-components'
 
 export const SquareBlock = styled.div`
   display: flex;
-  min-width: 150px;
-  min-height: 150px;
+  min-width: 190px;
+  min-height: 190px;
   justify-content: center;
   align-items: center;
   flex-direction: column;

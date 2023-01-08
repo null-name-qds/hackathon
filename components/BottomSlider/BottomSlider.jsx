@@ -53,6 +53,7 @@ export default function BottomSlider() {
                   text="Have a look at Vancouver's current housing market"
                   size="2rem"
                   weight="bold"
+                  color  = '#2e1e8e'
                 />
               </motion.div>
               <motion.div
@@ -78,7 +79,7 @@ export default function BottomSlider() {
                     delay={0.8}
                 >
                     <InfoGraph
-                        header="$1.5 Million"
+                        header="$1.5 MILLION"
                         subhead="AVERAGE HOME COST"
                         icon={"/house.svg"}
                     />

@@ -78,7 +78,7 @@ export default function BottomSlider() {
                     delay={0.8}
                 >
                     <InfoGraph
-                        header="$1.5 Million"
+                        header="$1.5 MILLION"
                         subhead="AVERAGE HOME COST"
                         icon={"/house.svg"}
                     />

@@ -4,7 +4,7 @@ border: 1px #7E6DE7 solid;
 background-color:#FFFFFF;
 border-radius:.5rem;
 max-width:50px;
-padding:.5rem 3rem .5rem 1.5rem;
+padding:.5rem 3.2rem .5rem 1rem;
 color: #7E6DE7;
     &:focus{
        outline:none; 

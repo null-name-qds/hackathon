@@ -4,6 +4,7 @@ import { sanitizePrice, calcYears} from "../../util";
 import "leaflet/dist/leaflet.css";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css"; // Re-uses images from ~leaflet package
 import "leaflet-defaulticon-compatibility";
+import Image from "next/image";
 import { BsHouseFill } from "react-icons/bs";
 import styled from 'styled-components'
 import { Typography } from "../Typography/Typography";
@@ -46,7 +47,16 @@ const NewPop = styled(Popup)`
   .leaflet-popup-content p {
     margin:0;
   }
+  
 `
+
+    const tombstoneStyle = {
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "end",
+        marginTop: "1em",
+    }
+
   const houseIcon = L.icon({
       iconUrl: "/marker.svg",
       iconSize: [50, 50],
@@ -116,12 +126,13 @@ const NewPop = styled(Popup)`
                     size="1.5rem"
                     color="black"
                   />
-                  <Typography
-                    text={`${calcYears(sanitizePrice(result.Property.Price), salary)} YEARS`}
-                    textAlign="right"
-                    weight="600"
-                    size="1.5rem"
-                  />
+                      {(calcYears(sanitizePrice(result.Property.Price), salary) <= 100 ? (<Typography
+                          text={`${calcYears(sanitizePrice(result.Property.Price), salary)} YEARS`}
+                          textAlign="right"
+                          weight="600"
+                          size="1.5rem"
+                      />) : (<div style={tombstoneStyle}><Image src="/tombstoneghost.svg" alt="tombstone" width={100} height={100} /> </div>))}
+
                   </NewPop>
               </Marker>
           )) : 

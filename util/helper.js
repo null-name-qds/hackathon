@@ -7,8 +7,5 @@ export function sanitizePrice(price) {
 }
 
 export function calcYears(cost, salary) {
-    if (Math.ceil(cost / salary) > 100) {
-        return "🪦"
-    }
-    return Math.ceil(cost / salary).toString()
+    return Math.ceil(cost / salary)
 }

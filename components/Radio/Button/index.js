@@ -15,7 +15,6 @@ const Button = styled.button`
   transition: all 100ms ease-in-out;
   box-shadow: ${props => props.bx ? "0px": "8px 8px 0px #7E6DE7"};
   transform: ${props=> props.transform ? "translate(8px, 8px)" : undefined};
-
 `
 
 const Img = styled.img`

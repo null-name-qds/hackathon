@@ -41,7 +41,7 @@ export default function Button({
     return (
         <ButtonDiv onClick={onClick} bx={bx} position={position} left={left} top={top} width={width} display={display} padding={padding} zIndex={zIndex} transform={transform}>
             <Typography text={btnText} weight={"bold"} size={"1.3rem"} borderLeft={"none"} textAlign={"center"} />
-            {icon && <><Spacer axis={"horizontal"} size={25} /><img src={icon} /></>}
+            {icon && <><Spacer axis={"horizontal"} size={15} /><img src={icon} /></>}
         </ButtonDiv>
     )
 }

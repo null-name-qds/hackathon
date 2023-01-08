@@ -19,8 +19,6 @@ export default function Home({ data }) {
   const [bed, setBed] = useState("0-0");
   const [bath, setBath] = useState("0-0");
   const [type, setType] = useState(0);
-  const [sidebar, setSideBar] = useState(false);
-  const [button, setToggle] = useState(true);
 
   const router = useRouter();
   const submitHandler = async (min, max, bed, bath, type) => {
@@ -37,8 +35,7 @@ export default function Home({ data }) {
       </Head>
       <div className='flex flex-row justify-between'>
         {/* {sidebar && <Sidebar onExit={() => { setSideBar(false) }} onSubmit={submitHandler} />} */}
-        {sidebar && <Sidebar onExit={() => { setSideBar(false); setToggle(true);  }} onSubmit={submitHandler} />}
-        <Button btnText={"Filters"} icon="/filters.svg" position={"fixed"} top={"5%"} left={"4%"} transform={button} bx={button} onClick={() => { setSideBar(!sidebar); setToggle(!button); }} />
+        <Sidebar onSubmit={submitHandler} />
         <Map results={data} />
 
       </div>

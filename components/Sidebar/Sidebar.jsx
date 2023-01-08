@@ -7,6 +7,7 @@ import { Spacer } from '../Spacer/Spacer';
 import { useState } from 'react';
 import BigInput from "../BigInput/BigInput";
 import Radio from "../Radio/Button";
+import Button from '../Button/button';
 import { motion, AnimatePresence } from "framer-motion"
 const CostDiv = styled.div`
 display:flex;
@@ -23,16 +24,18 @@ export default function Sidebar({
     const [bath, setBath] = useState("0-0");
     const [type, setType] = useState(0);
 
+    const [sidebar, setSideBar] = useState(false);
+    const [button, setToggle] = useState(true);
 
     return (
         <>
             <AnimatePresence>
-                <motion.div className='h-[95vh] bg-[#F3F3FE] max-w-prose px-6 py-2 flex flex-col gap-8 fixed z-[501] mt-5 ml-5 justify-around'
-                    initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} >
+                {sidebar && <motion.div className='h-[95vh] bg-[#F3F3FE] max-w-prose px-6 py-2 flex flex-col gap-8 fixed z-[501] mt-5 ml-5 justify-around rounded-lg'
+                    initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ ease: "easeInOut", duration: .4 }}>
                     <div className="flex justify-between">
                         <Spacer axis={"horizontal"} />
                         {/* <Button btnText={"Filters"} icon="/filters.svg" width={"50%"} /> */}
-                        <img src="/exit.svg" className="cursor-pointer mt-1" onClick={onExit} />
+                        <img src="/exit.svg" className="cursor-pointer mt-1" onClick={() => { setSideBar(false); setToggle(true) }} />
                     </div>
                     <div className="flex gap-40">
                         <div className="flex flex-col">
@@ -73,8 +76,10 @@ export default function Sidebar({
                         <DarkButton btnText="Filter" onClick={() => onSubmit(min, max, bed, bath, type)} />
                     </div >
 
-                </motion.div >
+                </motion.div >}
             </AnimatePresence >
+
+            <Button btnText={"Filters"} icon="/filters.svg" position={"fixed"} top={"5%"} left={"4%"} transform={button} bx={button} onClick={() => { setSideBar(!sidebar); setToggle(!button); }} />
 
         </>
     )

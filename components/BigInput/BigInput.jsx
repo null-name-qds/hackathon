@@ -7,7 +7,7 @@ border-radius:.5rem;
 padding:1rem 2rem 1rem 2rem;
 font-size:1.5rem;
 color: #7E6DE7;
-align-self:center;
+align-self:start;
 box-shadow: 8px 8px 0px #7E6DE7;
     &:focus{
        outline:none; 

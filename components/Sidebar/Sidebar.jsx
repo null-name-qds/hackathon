@@ -33,13 +33,14 @@ export default function Sidebar({
     return (
         <>
             <AnimatePresence>
-                {sidebar && <motion.div className='h-[95vh] bg-[#F3F3FE] max-w-prose px-6 py-2 flex flex-col gap-8 fixed z-[501] mt-5 ml-5 justify-around rounded-lg'
+                {sidebar && <motion.div className='h-[95vh] bg-[#F3F3FE] max-w-prose px-6 py-2 flex flex-col gap-5 fixed z-[501] mt-5 ml-5 justify-around rounded-lg'
                     initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ ease: "easeInOut", duration: .4 }}>
                     <div className="flex justify-between">
                         <Spacer axis={"horizontal"} />
                         {/* <Button btnText={"Filters"} icon="/filters.svg" width={"50%"} /> */}
                         <img src="/exit.svg" className="cursor-pointer mt-1" alt='exit' onClick={() => { setSideBar(false); setToggle(true) }} />
                     </div>
+                    <Spacer axis='horizontal' size={20} />
                     <div className="flex gap-40">
                         <div className="flex flex-col">
                             <label><Typography text='Bedrooms' /></label>
@@ -50,7 +51,6 @@ export default function Sidebar({
                             <SelectInput values={["1", "2", "3"]} onChange={(e) => { setBath(`${e.target.value}-0`) }} />
                         </div>
                     </div>
-
                     <div>
                         <label><Typography text='Cost Range' color="#7E6DE7" /></label>
                         <CostDiv>
@@ -71,9 +71,10 @@ export default function Sidebar({
                             <Radio name="duplex" img="/duplex.svg" onClick={() => setType(2)} />
                         </div>
                     </div>
+                    <Spacer axis='vertical' size={7} />
 
                     <div className="flex flex-col justify-self-center gap-5 align-center">
-                        <Typography text='Want to know how long it will take to afford each property? Enter your salary to see!' color="#7E6DE7" />
+                        <Typography width = '450px' text='Want to know how long it will take to afford each property with a 5% mortgage rate? Enter your salary to see how many months it would take?' color="#7E6DE7" />
                         <BigInput value={salary} onChange={(e) => { setSalary(e.target.value.replace(/\D/,'')) }} />
                         <Spacer axis='vertical' size={0} />
                         <DarkButton btnText="Filter" onClick={() => onSubmit(min, max, bed, bath, type, salary)} />

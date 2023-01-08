@@ -9,9 +9,9 @@ display:flex;
 justify-content:justify-content;
 align-items:center;
 max-height:55px;
-max-width:350px;
+max-width:550px;
 outline: none;
-align-self:center;
+align-self:start;
 `
 export default function DarkButton({
     btnText,

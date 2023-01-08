@@ -15,7 +15,7 @@ const Header = styled.p`
 
 export function Typography({
     size = '1rem',
-    color = '#7E6DE7',
+    color = '#402BC9',
     weight = '400',
     text = 'Typography',
     textAlign = 'left',

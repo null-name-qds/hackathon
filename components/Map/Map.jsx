@@ -25,7 +25,7 @@ export default function Map({ results }) {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-          {results ? results.map((result) => (
+          {results && results.length !== 0  ? results.map((result) => (
               <Marker
                   key={result.Id}
                   icon={sanitizePrice(result.Property.Price) >= 600000 ? expensiveHouse : houseIcon}
@@ -38,7 +38,7 @@ export default function Map({ results }) {
               </Marker>
           )) : (<Marker icon={houseIcon} position={[49.2577302,-123.1589232]}>
               <Popup>
-                  A pretty CSS3 popup. <br /> Easily customizable.
+                  If you are seeing this, there is an error with the API or the data is not available.
               </Popup>
           </Marker>)}
       </MapContainer>

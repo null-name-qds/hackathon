@@ -1,5 +1,6 @@
+import React, { use } from "react";
 import Chart from "../Chart/Chart";
-import { useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import InfoGraph from "../Infograph/Infograph";
 import { motion, AnimatePresence } from "framer-motion";
 import { Typography } from "../Typography/Typography";

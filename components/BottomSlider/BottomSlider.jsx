@@ -114,11 +114,11 @@ export default function BottomSlider() {
           </motion.div>
         )}
       </AnimatePresence>
-      <div className="bg-[#5f5fc5] p-4 bottom-0 absolute right-0 rounded-full z-[600] m-6 cursor-pointer rise-up">
-        <AiOutlineBarChart
-          onClick={toggleShow}
-          className="text-white w-8 h-8"
-        />
+      <div className="bg-[#5f5fc5] p-4 bottom-0 absolute right-0 rounded-full z-[600] m-6 cursor-pointer rise-up" onClick={toggleShow}>
+        <div className="flex items-center gap-2">
+          <Typography text="See insights" color="white" weight="600" />
+          <AiOutlineBarChart className="text-white w-8 h-8" />
+        </div>
       </div>
     </>
   );

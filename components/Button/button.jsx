@@ -16,20 +16,21 @@ transition: all .1s ease-in-out;
 box-shadow: ${props => props.bx || `8px 6px 0px #7E6DE7,
 8px 6px 0px 1px #7CA1FF;`}
 max-height:55px;
+outline: none;
 &:hover {
     transform: translate(8px, 6px);
     box-shadow: 0px 0px 0px #7E6DE7;
   }
 `
 export default function Button({
-    header,
+    btnText,
     onClick = () => { },
     bx,
 }
 ) {
     return (
         <ButtonDiv onClick={onClick} bx={bx}>
-            <Typography text={header} weight={"bold"} borderLeft={"none"} />
+            <Typography text={btnText} weight={"bold"} borderLeft={"none"} />
         </ButtonDiv>
     )
 }

@@ -64,7 +64,7 @@ export default function LandingPage() {
                         padding="10px" />
                 </TitleFlex>
                 <Spacer axis='vertical' size={50} />
-                <div>"VANCOUVER IS.... lgjealkgmkealmg ishan pls</div>
+                <div>VANCOUVER IS.... lgjealkgmkealmg ishan pls</div>
                 <Spacer axis='vertical' size={50} />
 
                 <Typography

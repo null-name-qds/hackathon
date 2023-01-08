@@ -39,6 +39,7 @@ export default function BottomSlider() {
                   src={"./vancouverspecial.svg"}
                   width={200}
                   height={200}
+                  alt="House"
                 />
               </motion.div>
               <motion.div

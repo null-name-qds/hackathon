@@ -35,7 +35,7 @@ export default function Sidebar({
                     <div className="flex justify-between">
                         <Spacer axis={"horizontal"} />
                         {/* <Button btnText={"Filters"} icon="/filters.svg" width={"50%"} /> */}
-                        <img src="/exit.svg" className="cursor-pointer mt-1" onClick={() => { setSideBar(false); setToggle(true) }} />
+                        <img src="/exit.svg" className="cursor-pointer mt-1" alt='exit' onClick={() => { setSideBar(false); setToggle(true) }} />
                     </div>
                     <div className="flex gap-40">
                         <div className="flex flex-col">

@@ -22,11 +22,11 @@ export default function BottomSlider() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
             exit={{ opacity: 0, y: 100 }}
-            className="w-full bg-[#F3F3FE] py-4 fixed z-[999] h-screen flex flex-col justify-center items-center bottom-0"
+            className="w-full bg-[#F3F3FE] py-4 fixed z-[999] h-screen flex flex-col justify-center items-center bottom-0 gap-[6rem]"
             ref={barRef}
           >
             <AiFillCloseCircle
-              className="absolute top-0 right-0 my-4 mx-4 h-[30px] w-[30px] text-[#3923C2]"
+              className="absolute top-0 right-0 my-4 mx-4 h-[30px] w-[30px] text-[#3923C2] cursor-pointer rise-up"
               onClick={toggleShow}
             />
             <div>
@@ -34,13 +34,14 @@ export default function BottomSlider() {
               <Typography
                 text="Have a look at Vancouver's current housing market"
                 size="2rem"
+                weight="bold"
               />
               <Typography
                 text="Owning a home in Vancouver seems like a fever dream. Explore available properties and see how long it will take you to purchase a home based on your salary and the current market."
                 size="1.3rem"
               />
             </div>
-            <div className="flex flex-col gap-7">
+            <div className="flex flex-row gap-7">
               <InfoGraph
                 header="$1.5 Million"
                 subhead="AVERAGE HOME COST"

@@ -38,3 +38,6 @@ test.jsx
 
 # test page
 test.js
+
+# webstorm
+.idea

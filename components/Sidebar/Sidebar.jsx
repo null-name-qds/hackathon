@@ -10,6 +10,7 @@ import Radio from "../Radio/Button";
 import Button from '../Button/button';
 import { motion, AnimatePresence } from "framer-motion";
 import Image from 'next/image';
+
 const CostDiv = styled.div`
 display:flex;
 align-items:center;
@@ -17,7 +18,6 @@ align-items:center;
 
 export default function Sidebar({
     onSubmit,
-    onExit = () => { },
 }) {
     const [min, setMin] = useState(0);
     const [max, setMax] = useState(1000000);
@@ -41,7 +41,7 @@ export default function Sidebar({
                             height={29}
                             alt={"exit icon"}
                             className="cursor-pointer mt-1"
-                            onClick={() => { setSideBar(false); setToggle(false); }}
+                            onClick={() => { setSideBar(false); setToggle(true); }}
                         />
                     </div>
                     <Spacer axis={"vertical"} size={10} />
@@ -87,7 +87,7 @@ export default function Sidebar({
                 </motion.div >}
             </AnimatePresence >
 
-            <Button btnText={"Filters"} icon="/filters.svg" position={"fixed"} top={"5%"} left={"3.5%"} onClick={() => { setSideBar(!sidebar); setToggle(!button); }} />
+            <Button bx={button} transform={button} btnText={"Filters"} icon="/filters.svg" position={"fixed"} top={"5%"} left={"3.5%"} onClick={() => { setSideBar(!sidebar); setToggle(!button); }} />
 
         </>
     )

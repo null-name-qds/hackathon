@@ -3,6 +3,18 @@
 @tailwind components;
 @tailwind utilities;
 
+.leaflet-top, .leaflet-bottom {
+       z-index: 500 !important;
+}
+
+.rise-up{
+       transition: 0.2s ease-in-out all !important;
+}
+
+.rise-up:hover{
+       transform: translateY(-3px);
+}
+
 body, html {
        font-family: 'Quicksand', sans-serif;
-};
+}

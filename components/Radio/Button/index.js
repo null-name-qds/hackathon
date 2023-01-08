@@ -33,7 +33,9 @@ const Img = styled.img`
 export default function RadioBtn({
   name,
   img,
-  onClick = () => {}
+  onClick = () => {},
+  bx,
+  transform,
 }) {
 
 

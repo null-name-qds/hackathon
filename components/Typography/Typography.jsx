@@ -26,6 +26,7 @@ export function Typography({
     padding = '0',
     width = 'auto',
     borderLeft = 'inherit',
+    position = 'inherit',
     ...otherProps
 }) {
     return (

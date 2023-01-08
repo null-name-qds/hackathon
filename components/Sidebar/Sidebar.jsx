@@ -5,6 +5,7 @@ import { Typography } from '../Typography/Typography';
 import DarkButton from '../DarkButton';
 import { Spacer } from '../Spacer/Spacer';
 import { useState } from 'react';
+import { useRouter} from "next/router";
 import BigInput from "../BigInput/BigInput";
 import Radio from "../Radio/Button";
 import Button from '../Button/button';
@@ -18,6 +19,8 @@ export default function Sidebar({
     onSubmit,
     onExit = () => { },
 }) {
+    const router = useRouter();
+    const query = router.query.salary;
     const [min, setMin] = useState(0);
     const [max, setMax] = useState(1000000);
     const [bed, setBed] = useState("0-0");
@@ -25,7 +28,7 @@ export default function Sidebar({
     const [type, setType] = useState(0);
     const [sidebar, setSideBar] = useState(false);
     const [button, setToggle] = useState(true);
-    const [salary, setSalary] = useState(40000);
+    const [salary, setSalary] = useState( query ? query : 40000);
 
     return (
         <>
@@ -73,7 +76,7 @@ export default function Sidebar({
                         <Typography text='Want to know how long it will take to afford each property? Enter your salary to see!' color="#7E6DE7" />
                         <BigInput value={salary} onChange={(e) => { setSalary(e.target.value.replace(/\D/,'')) }} />
                         <Spacer axis='vertical' size={0} />
-                        <DarkButton btnText="Filter" onClick={() => onSubmit(min, max, bed, bath, type)} />
+                        <DarkButton btnText="Filter" onClick={() => onSubmit(min, max, bed, bath, type, salary)} />
                     </div >
 
                 </motion.div >}

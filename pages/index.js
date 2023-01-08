@@ -1,10 +1,17 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import Map from '../components/Map'
+import { useRouter } from 'next/router'
+import axios from 'axios';
 import Sidebar from '../components/Sidebar/Sidebar'
+import { useState, useEffect } from 'react'
 import styles from '../styles/Home.module.css'
 
-export default function Home() {
+export default function Home({ data }) {
+    const [min, setMin] = useState(0);
+    const [max, setMax] = useState(1000000);
+    const [bed, setBed] = useState("0-0");
+    const [bath, setBath] = useState("0-0");
+    const [type, setType] = useState(0);
   return (
       <>
       <Head>
@@ -13,8 +20,32 @@ export default function Home() {
       </Head>
         <div className='flex flex-row justify-between'>
           <Sidebar />
-          <Map />
+            <Map results={data} />
         </div>
       </>
   )
 }
+
+// export async function getServerSideProps(ctx) {
+//     const { min, max, bed, bath, type } = ctx.query;
+//     let url = "http://localhost:3000/api/price";
+//     if (process.env.VERCEL_URL) {
+//         url = `https://${process.env.VERCEL_URL}/api/price`;
+//     }
+//     const { data }= await axios({
+//         method: 'get',
+//         url: url,
+//         params: {
+//             'min': min,
+//             'max': max,
+//             'bed': bed,
+//             'bath': bath,
+//             'type': type,
+//         }
+//     })
+//     return {
+//         props: {
+//             data: data
+//         }
+//     }
+// }

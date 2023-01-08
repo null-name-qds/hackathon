@@ -6,7 +6,7 @@ import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility
 import "leaflet-defaulticon-compatibility";
 import {BsHouseFill} from "react-icons/bs";
 
-export default function Map() {
+export default function Map({ results }) {
   const purpleOption = { color: "purple" };
   const redOption = { color: "red" };
   return (
@@ -16,11 +16,21 @@ export default function Map() {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <Marker position={[49.2577302,-123.1589232]}>
-          <Popup>
-            A pretty CSS3 popup. <br /> Easily customizable.
-          </Popup>
-        </Marker>
+          {results ? results.map((result) => (
+              <Marker
+                  key={result.Id}
+                  position={[result.Property.Address.Latitude, result.Property.Address.Longitude]}
+              >
+                  <Popup>
+                      {result.Property.Address.AddressText} <br/>
+                      {result.Property.Price}
+                  </Popup>
+              </Marker>
+          )) : (<Marker position={[49.2577302,-123.1589232]}>
+              <Popup>
+                  A pretty CSS3 popup. <br /> Easily customizable.
+              </Popup>
+          </Marker>)}
       </MapContainer>
     </>
   );

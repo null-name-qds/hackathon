@@ -12,9 +12,6 @@ export default function Sidebar() {
                 {/* <div className="flex">
                     <Image src={'./filter-icon.svg'} width={40} height={40} />
                 </div> */}
-            <div className='h-screen max-w-[300px]'>
-                <Typography text = 'hey'/>
-                <Chart />
             </div>
         </>
     )

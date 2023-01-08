@@ -12,12 +12,6 @@ const SideBarCont = styled(motion.Sidebar)`
 `
 
 export default function Home({ data }) {
-  const [min, setMin] = useState(0);
-  const [max, setMax] = useState(1000000);
-  const [bed, setBed] = useState("0-0");
-  const [bath, setBath] = useState("0-0");
-  const [type, setType] = useState(0);
-
   const router = useRouter();
   const submitHandler = async (min, max, bed, bath, type) => {
     await router.push({
@@ -25,6 +19,7 @@ export default function Home({ data }) {
       query: { min, max, bed, bath, type },
     })
   }
+
   return (
     <>
       <Head>
@@ -42,26 +37,26 @@ export default function Home({ data }) {
   )
 }
 
-export async function getServerSideProps(ctx) {
-    const { min, max, bed, bath, type } = ctx.query;
-    let url = "http://localhost:3000/api/price";
-    if (process.env.VERCEL_URL) {
-        url = `https://${process.env.VERCEL_URL}/api/price`;
-    }
-    const { data }= await axios({
-        method: 'get',
-        url: url,
-        params: {
-            'min': min,
-            'max': max,
-            'bed': bed,
-            'bath': bath,
-            'type': type,
-        }
-    })
-    return {
-        props: {
-            data: data
-        }
-    }
-}
+// export async function getServerSideProps(ctx) {
+//     const { min, max, bed, bath, type } = ctx.query;
+//     let url = "http://localhost:3000/api/price";
+//     if (process.env.VERCEL_URL) {
+//         url = `https://${process.env.VERCEL_URL}/api/price`;
+//     }
+//     const { data }= await axios({
+//         method: 'get',
+//         url: url,
+//         params: {
+//             'min': min,
+//             'max': max,
+//             'bed': bed,
+//             'bath': bath,
+//             'type': type,
+//         }
+//     })
+//     return {
+//         props: {
+//             data: data
+//         }
+//     }
+// }

@@ -51,11 +51,11 @@ export default function Sidebar({
                     <div>
                         <label><Typography text='Cost Range' color="#7E6DE7" /></label>
                         <CostDiv>
-                            <Input value={min} type={"number"} onChange={(e) => { setMin(e.target.value) }} />
+                            <Input value={min} onChange={(e) => { setMin(e.target.value.replace(/\D/,''))}} />
                             <Spacer axis='horizontal' size={30} />
                             <Typography text='to' color="#7E6DE7" />
                             <Spacer axis='horizontal' size={30} />
-                            <Input value={max} type={"number"} onChange={(e) => { setMax(e.target.value) }} />
+                            <Input value={max} onChange={(e) => { setMax(e.target.value.replace(/\D/,'')) }} />
                         </CostDiv>
                     </div>
 
@@ -71,7 +71,7 @@ export default function Sidebar({
 
                     <div className="flex flex-col justify-self-center gap-5 align-center">
                         <Typography text='Want to know how long it will take to afford each property? Enter your salary to see!' color="#7E6DE7" />
-                        <BigInput onChange={(e) => { setSalary(e.target.value)}} />
+                        <BigInput value={salary} onChange={(e) => { setSalary(e.target.value.replace(/\D/,'')) }} />
                         <Spacer axis='vertical' size={0} />
                         <DarkButton btnText="Filter" onClick={() => onSubmit(min, max, bed, bath, type)} />
                     </div >

@@ -23,9 +23,9 @@ export default function Sidebar({
     const [bed, setBed] = useState("0-0");
     const [bath, setBath] = useState("0-0");
     const [type, setType] = useState(0);
-
     const [sidebar, setSideBar] = useState(false);
     const [button, setToggle] = useState(true);
+    const [salary, setSalary] = useState(40000);
 
     return (
         <>
@@ -71,7 +71,7 @@ export default function Sidebar({
 
                     <div className="flex flex-col justify-self-center gap-5 align-center">
                         <Typography text='Want to know how long it will take to afford each property? Enter your salary to see!' color="#7E6DE7" />
-                        <BigInput />
+                        <BigInput onChange={(e) => { setSalary(e.target.value)}} />
                         <Spacer axis='vertical' size={0} />
                         <DarkButton btnText="Filter" onClick={() => onSubmit(min, max, bed, bath, type)} />
                     </div >
